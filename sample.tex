@@ -1,0 +1,138 @@
+\documentclass[12pt]{article}
+
+\title{Sample \LaTeX Document}
+\author{Jotham Wong Yi Shuen}
+\date{3 September 2024}
+
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{minted}
+\usepackage{mathtools}
+
+\begin{document}
+    \maketitle
+    \tableofcontents
+
+    \section{Spaces}
+    It does not matter whether you
+    enter one or several             spaces
+    after a word.
+
+    An empty line starts a new
+    paragraph.
+    
+    Forcing a linebreak\\
+    Ooga BOOGA
+
+    The diacritic \^j vs the \^{}
+
+    \section{Section}
+    \subsection{Subsection}
+    \subsubsection{Subsubsection}
+    Cannot go any lower.
+    \subsubsection*{unnumbered subsubsection}
+    I have no number!
+
+    \section{Font Styles}
+
+    We can change fonts using the following commands, \emph{Emphasized}, \texttt{Monospaced Font}, \textsc{Small Capitals}, \uppercase{uppercase}
+
+    \section{Font Size}
+
+    Within the same scope, we can change the font size as follows {\tiny me is tiny}, {\scriptsize me is ooga}, {\small smally}, {\normalsize normal}, {\LARGE OOGA BOOGA}, {\Huge OOGA BUNGA}
+
+    \section{Non-breaking space}
+    How we can use the \~{} to do a non-breaking space. Observe that this reallylongword will break. Now let's use \~{}.
+
+    How we can use the \~{} to do a non-breaking space. Observe that this really~longword will break. Now let's use \~{}.
+
+    But in practice, I would not recommend this. Just let \LaTeX~do the formatting for you.
+    Unless it really breaks your immersion.
+    We can also use this in math equations.
+
+    Compare the two lines below
+    
+    
+    $f(x) = x^2 \quad \text{for} x > 0$
+
+    $f(x) = x^2 \quad \text{for}~x > 0$
+
+    \section{Line Spacing}
+
+        ~ Jotham Wong   
+
+        Jotham\singlespacing Wong
+        Jotham\onehalfspace Wong
+
+        \begin{spacing}{2.5}
+            This paragraph has \\ huge gaps \\ between lines.
+        \end{spacing}
+
+    \section{Quote-marks}
+    `quote' vs ``quote''
+
+    \section{Paragraph Alignment}
+
+        \begin{flushleft}
+            I am flushed left.    
+        \end{flushleft}
+
+
+        \begin{flushright}
+            I am flushed right.    
+        \end{flushright}
+
+        \begin{center}
+            Hello I am centered
+        \end{center}
+
+
+    \section{Verbatim}
+        
+        We begin the verbatim environment.
+
+        \begin{verbatim}
+            The verbatim environment
+                simply reproduces every
+            character you input,
+            including all s p a c e s!
+        \end{verbatim}
+
+    \section{Code Blocks}
+
+        Using \texttt{minted} package to write code blocks.
+
+        \begin{minted}{python}
+            # This is python code
+            def factorial(n):
+                return n == 1 ? 1 : n * factorial(n-1)
+        \end{minted}
+
+        \begin{minted}{java}
+            // This is java code
+            public int factorial(int n) {
+                if (n == 1) {
+                    return 1;
+                } else {
+                    return n * factorial(n-1);
+                }
+            }
+        \end{minted}
+
+        Notice the syntax highlighting. (Basically verbatim + syntax)
+
+    \section{Math fun}
+        Short hand equations: \[e^{i \pi} + 1 = 5\]
+
+        The equivalent with explicit environment command (and numbered equation)
+
+        \begin{equation}
+            e^{i \pi} + 1 = 0
+        \end{equation}
+    
+    \section{Citing stuff}
+        \LaTeX is a set of macros built upon \TeX \cite{texbook}.
+    
+    \bibliographystyle{plain}
+    \bibliography{ref}
+\end{document}
